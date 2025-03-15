@@ -1,2 +1,7 @@
 cradle:
   cabal:
+    - path: "src"
+      component: "lib:devden-stat-bot"
+
+    - path: "app/Main.hs"
+      component: "devden-stat-bot:exe:devden-stat-bot"
