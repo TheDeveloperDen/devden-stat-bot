@@ -10,6 +10,7 @@ docs:
 repl *ARGS:
     cabal repl {{ ARGS }}
 
-# Run ghcid -- auto-recompile and run `main` function
+# Run ghciwatch
+# "cabal is better" they said, however this command is stupid and shouldn't be as long as it is
 run:
-    ghcid -c cabal repl app/Main.hs -T :main
+    ghciwatch --command "cabal v2-repl" --watch src --watch app --after-startup-ghci ":load app/Main.hs" --test-ghci "main"    
