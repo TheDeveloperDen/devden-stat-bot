@@ -71,7 +71,9 @@ library
   hs-source-dirs:  src
 
   -- cabal-fmt: expand src
-  exposed-modules: Model
+  exposed-modules:
+    Db.Snowflake
+    Model
 
 executable devden-stat-bot
   import:         shared

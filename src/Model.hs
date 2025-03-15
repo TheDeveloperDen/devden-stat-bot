@@ -5,27 +5,14 @@ module Model where
 import Database.Beam
 
 import Calamity (Message, Snowflake (..), User)
-import Database.Beam.Backend
-import Database.Beam.Backend.SQL.AST
 import Database.Beam.Migrate
 import Database.Beam.Migrate.Simple
 import Database.Beam.Sqlite (Sqlite, runBeamSqliteDebug)
 import Database.Beam.Sqlite.Migrate
-import Database.Beam.Sqlite.Syntax
-import Database.SQLite.Simple hiding (field)
+import Database.SQLite.Simple
 import Shower (printer)
 
-instance HasSqlValueSyntax Value (Snowflake f) where
-  sqlValueSyntax = Value . fromSnowflake
-
-instance HasSqlValueSyntax SqliteValueSyntax (Snowflake f) where
-  sqlValueSyntax = sqlValueSyntax . fromSnowflake
-
-instance HasDefaultSqlDataType Sqlite (Snowflake f) where
-  defaultSqlDataType _ = defaultSqlDataType (Proxy @Word64)
-
-instance FromBackendRow Sqlite (Snowflake f) where
-  fromBackendRow = Snowflake <$> fromBackendRow
+import Db.Snowflake ()
 
 data MessageT f = Message
   { _messageId :: Columnar f (Snowflake Message)
