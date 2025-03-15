@@ -31,6 +31,8 @@
         aeson.source = "1.5.0.0" # Hackage version
         shower.source = inputs.shower; # Flake input
         */
+
+        websockets.source = "0.13.0.0";
       };
 
       # Add your package overrides here
@@ -44,6 +46,8 @@
           check = false;
         };
         */
+
+        calamity.broken = false;
       };
 
       # Development shell configuration
