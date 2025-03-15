@@ -8,5 +8,5 @@
   "haskell.manageHLS": "PATH",
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nixd",
-  "cSpell.words": ["devden"]
+  "cSpell.words": ["Beamable", "devden"]
 }
