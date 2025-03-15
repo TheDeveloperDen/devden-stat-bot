@@ -51,7 +51,7 @@ initDb = do
       insert (_messages $ unCheckDatabase devdenDB) $
         Database.Beam.insertValues
           [ Message (Snowflake 1) (Snowflake 2) "Hello, World!"
-          , Message (Snowflake 3) (Snowflake 4) "pee"
+          , Message (Snowflake 3) (Snowflake 4) "pep"
           ]
 
     messages <- runSelectReturningList $ select $ all_ (_messages $ unCheckDatabase devdenDB)
