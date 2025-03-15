@@ -56,7 +56,6 @@ common shared
     , relude        >=1.0
     , shower
     , time
-    , with-utf8
 
   hs-source-dirs:     src
   default-language:   GHC2021

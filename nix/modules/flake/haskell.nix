@@ -21,7 +21,7 @@
       });
 
       # The base package set (this value is the default)
-      # basePackages = pkgs.haskellPackages;
+      basePackages = pkgs.haskell.packages.ghc98;
 
       # Packages to add on top of `basePackages`
       packages = {
