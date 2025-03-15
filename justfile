@@ -10,6 +10,10 @@ docs:
 repl *ARGS:
     cabal repl {{ ARGS }}
 
-# Run ghcid -- auto-recompile and run `main` function
+# Run ghciwatch to watch for changes and reload
+# There's no reason this command should be as long as it is, cabal is dumb
 run:
-    ghcid -c cabal repl app/Main.hs -T :main
+    ghciwatch --command "cabal v2-repl --repl-no-load" \
+        --watch src --watch app  \
+        --after-startup-ghci ":load app/Main.hs" \
+        --test-ghci "main"
