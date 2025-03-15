@@ -13,6 +13,7 @@
         just
         nixd
         ghciwatch
+        config.fourmolu.wrapper
       ];
     };
   };
